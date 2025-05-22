@@ -2,8 +2,8 @@ from animal import Animal
 
 
 class Herbivore(Animal):
-    def __init__(self, name, age, specie, energy_level, favorite_food, grazing_time, sound="snort", can_be_fed = True):
-        super().__init__(name, age, specie, sound, energy_level, can_be_fed)
+    def __init__(self, name, age, specie, energy_level, favorite_food, grazing_time, sound="snort", visitor_can_feed = True):
+        super().__init__(name, age, specie, sound, energy_level, visitor_can_feed)
         self.favorite_food = favorite_food
         self.grazing_time = grazing_time
 
