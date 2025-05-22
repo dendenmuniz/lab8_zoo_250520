@@ -62,11 +62,11 @@ def main():
 
     print("Welcome to The Madagascar zoo!")
     print("If you want to quit, type 'exit'.")
-    name = input("What's your name? \n ")
+    name = input("What's your name? \n")
     age =  input("What's your age? \n")
     visitor = Visitor(name, age)
     
-    print(f"Welcome {visitor.name}! \n Let's start your visit.")
+    print(f"Welcome {visitor.name}! \nLet's start your visit.")
     print(zoo_guide.present_theirself())
     zoo_guide.present_animals(zoo_animals)
 
@@ -77,7 +77,9 @@ def main():
         if user_input.lower() == "exit":
             print("Thanks for your visit!")
             break
-        elif int(user_input) > 0 and int(user_input) < len(zoo_animals):
+        elif not user_input.isnumeric():
+            print(f"Please enter a valid number")
+        elif int(user_input) in zoo_animals:
           visiting_animal = int(user_input)
           visitor.visit_animal(zoo_animals[visiting_animal])
           trigger_display_behavior(zoo_animals[visiting_animal])
